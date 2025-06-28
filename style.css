@@ -1,0 +1,17 @@
+body{
+    height: 100vh;
+    margin: 0;
+    background: #222;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#timer{
+    font-size: 3em;
+    background: #000;
+    padding: 20px 80px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px #0f0;
+}
