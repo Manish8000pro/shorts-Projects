@@ -1,17 +1,57 @@
-body{
-    height: 100vh;
+body {
     margin: 0;
-    background: #222;
-    color: #fff;
-    font-family: sans-serif;
+    padding: 0;
+    background: #0e2136;
+    height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
-#timer{
-    font-size: 3em;
-    background: #000;
-    padding: 20px 80px;
+
+.box {
+    background-color: #142d4a;
+    color: #00c3ff;
+    height: 200px;
+    aspect-ratio: 1/1;
     border-radius: 10px;
-    box-shadow: 3px 3px 2px #0f0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+@property --deg{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.box::before,
+.box::after {
+    content: "";
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from var(--deg) at center,
+        #00c3ff,
+        #4d0199,
+        #6300c6,
+        #009dcd,
+        #00c3ff
+    );
+    border-radius: inherit;
+    z-index: -2;
+    padding: 2px;
+    animation: autoRotate 2s linear infinite;
+}
+
+.box::after {
+    filter: blur(15px);
+}
+
+@keyframes autoRotate {
+    to {
+        --deg: 360deg;
+    }
 }
